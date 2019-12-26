@@ -1,0 +1,30 @@
+table,tr,td{
+			border: 1px solid black;
+			padding: 10px;
+		}
+		table {
+			border-collapse: collapse;
+			margin-left: 20px;
+			margin-top: 50px;
+		}
+		ul button {
+			margin-top: 10px;
+			margin-left: 10px;
+		}
+		.myProgress {
+			width: 200px;
+			background-color: #ddd;
+		}
+		.myBar {
+			width: 70%;
+			height: 30px;
+			background-color: linear-gradient(to right, green, lightgreen);
+			line-height: 30px;
+			color: white;
+			max-width: 100%;
+		}
+		button.buttonColor{
+			background-color: blue;
+			color: white;
+			margin-left: 20px;
+		}

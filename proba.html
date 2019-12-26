@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TEST</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<ul id="ulLista"></ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2 text-center">
+				<div id="table">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<button id="button" class="btn buttonColor">
+					Add new Book
+				</button>
+			</div>
+		</div>
+	</div>
+	<script>
+		function book(title, author, maxPage, onPage) {
+			this.title = title;
+			this.author = author;
+			this.maxPage = maxPage;
+			this.onPage = onPage;
+
+			this.print = function(){
+				return `<b>Title:</b> ${this.title}, <b>Author:</b> ${this.author}, <b>Number of pages:</+b> ${this.maxPage}<br>`
+				// if(this.maxPage == this.onPage){
+				// 	return `<li>Ovaa kniga <b>${this.title}</b> od <i>${this.author}</i> e procitana.`
+				// } else {
+				// 	return `<li>Ovaa kniga <b>${this.title}</b> od <i>${this.author}</i> ne e procitana.`
+				// }
+			};
+			// this.onlyPrint = function(){
+			// 	return `<tr>
+			// 				<td>${this.title}</td>
+			// 				<td>${this.author}</td>
+			// 				<td>${this.maxPage}</td>
+			// 				<td>${this.onPage}</td>
+			// 			`
+			// }
+
+			// this.percent = function(){
+			// 	var procent = Math.round(this.onPage / this.maxPage * 100)
+
+			// 	return procent;
+			// }
+		}
+
+			var book1 = new book("The Habiit", "J.R.R. Tolkien", 88, 88);
+			var book2 = new book("The Lord Of the Rings", "J.R.R. Tolkien", 88, 38);
+			var book3 = new book("test", "test", 58, 28);
+
+			var books = [book1,book2,book3];
+
+			for (var i = 0; i < books.length; i++) {
+				document.getElementById('ulLista').innerHTML += books[i].print();
+			}
+			// function printTable(){
+			// 	var tableBody = '';
+
+			// 	for (var c = 0; c < books.length; c++) {
+			// 		tableBody += books[c].onlyPrint();
+			// 	}
+
+			// 	document.getElementById('table').innerHTML = "<table>" + tableBody + "</table>";
+
+			// 	// var loop = document.getElementByClassName('myBar');
+
+			// 	// for (var j = 0; j < loop.length; j++) {
+			// 	// 	var progress = document.getElementByClassName('myBar')[j];
+
+			// 	// 	progress.style.width = books[j].percent() + '%'
+			// 	// }
+			// }
+
+			// printTable();
+
+			document.getElementById('button').addEventListener('click', addBook);
+
+			function addBook(){
+				document.getElementById('ulLista').innerHTML = "";
+				var title = prompt("Vnesi naslov");
+				var author = prompt("Vnesi avtor");
+				var allPages = parseInt(prompt("Vnesi vkupno stranici"));
+				var page = parseInt(prompt("Vnesi procitani stranici"));
+
+				var newBook = new book(title, author, allPages, page);
+				books.push(newBook);
+				for (var i = 0; i < books.length; i++) {
+					document.getElementById('ulLista').innerHTML += books[i].print();
+				}
+
+			}
+	</script>
+</body>
+</html>
