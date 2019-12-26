@@ -5,27 +5,27 @@
 // 			this.onPage = onPage;
 
 // 			this.print = function(){
-// 				return `<b>Title:</b> ${this.title}, <b>Author:</b> ${this.author}, <b>Number of pages:</+b> ${this.maxPage}<br>`
-// 				// if(this.maxPage == this.onPage){
-// 				// 	return `<li>Ovaa kniga <b>${this.title}</b> od <i>${this.author}</i> e procitana.`
-// 				// } else {
-// 				// 	return `<li>Ovaa kniga <b>${this.title}</b> od <i>${this.author}</i> ne e procitana.`
-// 				// }
+// 				// return `<b>Title:</b> ${this.title}, <b>Author:</b> ${this.author}, <b>Number of pages:</+b> ${this.maxPage}<br>`
+// 				if(this.maxPage == this.onPage){
+// 					return `<li>Ovaa kniga <b>${this.title}</b> od <i>${this.author}</i> e procitana.`
+// 				} else {
+// 					return `<li>Ovaa kniga <b>${this.title}</b> od <i>${this.author}</i> ne e procitana.`
+// 				}
 // 			};
-// 			// this.onlyPrint = function(){
-// 			// 	return `<tr>
-// 			// 				<td>${this.title}</td>
-// 			// 				<td>${this.author}</td>
-// 			// 				<td>${this.maxPage}</td>
-// 			// 				<td>${this.onPage}</td>
-// 			// 			`
-// 			// }
+// 			this.onlyPrint = function(){
+// 				return `<tr>
+// 							<td>${this.title}</td>
+// 							<td>${this.author}</td>
+// 							<td>${this.maxPage}</td>
+// 							<td>${this.onPage}</td>
+// 						`
+// 			}
 
-// 			// this.percent = function(){
-// 			// 	var procent = Math.round(this.onPage / this.maxPage * 100)
+// 			this.percent = function(){
+// 				var procent = Math.round(this.onPage / this.maxPage * 100)
 
-// 			// 	return procent;
-// 			// }
+// 				return procent;
+// 			}
 // 		}
 
 // 			var book1 = new book("The Habiit", "J.R.R. Tolkien", 88, 88);
@@ -37,25 +37,25 @@
 // 			for (var i = 0; i < books.length; i++) {
 // 				document.getElementById('ulLista').innerHTML += books[i].print();
 // 			}
-// 			// function printTable(){
-// 			// 	var tableBody = '';
+// 			function printTable(){
+// 				var tableBody = '';
 
-// 			// 	for (var c = 0; c < books.length; c++) {
-// 			// 		tableBody += books[c].onlyPrint();
-// 			// 	}
+// 				for (var c = 0; c < books.length; c++) {
+// 					tableBody += books[c].onlyPrint();
+// 				}
 
-// 			// 	document.getElementById('table').innerHTML = "<table>" + tableBody + "</table>";
+// 				document.getElementById('table').innerHTML = "<table>" + tableBody + "</table>";
 
-// 			// 	// var loop = document.getElementByClassName('myBar');
+// 				// var loop = document.getElementByClassName('myBar');
 
-// 			// 	// for (var j = 0; j < loop.length; j++) {
-// 			// 	// 	var progress = document.getElementByClassName('myBar')[j];
+// 				// for (var j = 0; j < loop.length; j++) {
+// 				// 	var progress = document.getElementByClassName('myBar')[j];
 
-// 			// 	// 	progress.style.width = books[j].percent() + '%'
-// 			// 	// }
-// 			// }
+// 				// 	progress.style.width = books[j].percent() + '%'
+// 				// }
+// 			}
 
-// 			// printTable();
+// 			printTable();
 
 // 			document.getElementById('button').addEventListener('click', addBook);
 
@@ -71,5 +71,7 @@
 // 				for (var i = 0; i < books.length; i++) {
 // 					document.getElementById('ulLista').innerHTML += books[i].print();
 // 				}
+
+// 				printTable();
 
 // 			}

@@ -39,12 +39,12 @@
 			this.onPage = onPage;
 
 			this.print = function(){
-				return `<b>Title:</b> ${this.title}, <b>Author:</b> ${this.author}, <b>Number of pages:</+b> ${this.maxPage}<br>`
-				// if(this.maxPage == this.onPage){
-				// 	return `<li>Ovaa kniga <b>${this.title}</b> od <i>${this.author}</i> e procitana.`
-				// } else {
-				// 	return `<li>Ovaa kniga <b>${this.title}</b> od <i>${this.author}</i> ne e procitana.`
-				// }
+				// return `<b>Title:</b> ${this.title}, <b>Author:</b> ${this.author}, <b>Number of pages:</b> ${this.maxPage}<br>`
+				if(this.maxPage == this.onPage){
+					return `<li>Ovaa kniga <b>${this.title}</b> od <i>${this.author}</i> e procitana.`
+				} else {
+					return `<li>Ovaa kniga <b>${this.title}</b> od <i>${this.author}</i> ne e procitana.`
+				}
 			};
 			// this.onlyPrint = function(){
 			// 	return `<tr>
@@ -71,6 +71,7 @@
 			for (var i = 0; i < books.length; i++) {
 				document.getElementById('ulLista').innerHTML += books[i].print();
 			}
+			
 			// function printTable(){
 			// 	var tableBody = '';
 
@@ -105,6 +106,7 @@
 				for (var i = 0; i < books.length; i++) {
 					document.getElementById('ulLista').innerHTML += books[i].print();
 				}
+				// printTable();
 
 			}
 	</script>
